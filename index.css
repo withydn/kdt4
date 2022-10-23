@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a{
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+body {
+  overflow: hidden;
+}
+
+/* header */
+
+.header {
+  height: 100px;
+  border-bottom: 1px solid rgba(255, 217, 0, 0.377);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* 로고 */
+.header h1{
+  position: relative;
+}
+
+.header h1 a{
+  color: navy;
+}
+
+/* 메뉴 */
+.header .menu {
+  display: flex;
+}
+
+.header .menu li{
+  margin: 0 1rem;
+}
+
+.header .menu li a{
+  color: navy;
+}
+
+
+
+/* 로고 */
+.header .sns{
+  display: flex;
+}
+
+.header .sns li{}
+
+.header .sns li a{
+  margin: 0 0.5vw;
+  font-size: 18px;
+  color: #ddd;
+}
+
+.header .sns li a i{}
+
+.header .sub_menu {
+  position: absolute;
+}
+.header .sub_menu a{
+  color: navy;
+  
+}
+
+.header .sub_menu a i{
+  display: none;
+  position: absolute;
+}
+  /* display: none; */
+
+/* 메인 */
+
+main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  /* background-color: #000; */
+}
+
+main video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+
+main .text{
+  position: absolute;
+  left: 6vw;
+  top: 40%;
+}
+
+main .text p{
+  font-size: 4vw;
+  font-family: fantasy;
+}
+
+main .text ul{
+  display: flex;
+}
+
+main .text ul li{
+  font-size: 18px;
+  margin-right: 10px
+}
+
+main .text ul li a{
+  color:navy;
+}
+
+main .text ul li a i{}
+
+main .text ul li a strong{}
+
+footer {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  font: 14px/1 'arial';
+  color: #ddd;
+  text-align: center;
+  padding: 5vh 5vw;
+}
+
+@media screen and (max-width:700px) {
+  .header .menu li{
+    margin: 0 1rem;
+    display: none;
+  }
+
+  main video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.8;
+    }
+    .header .sns li a i{
+    display: none;
+    }
+    
+    .header .sub_menu a i{
+      left: 90vw
+    }
+
+    .header .sub_menu a i{
+      display: block;
+      color: navy;
+    }
+     
+    .header h1{
+      left: 50%;
+      transform: translateX(-50%);
+    }
+}
