@@ -1,170 +1,201 @@
-* {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-a{
-  text-decoration: none;
-}
-
-ul, ol {
-  list-style: none;
-}
-
-body {
+body{
+  width: 100vw;
+  height: 100vh;
+  background-color: #cefeff;
+  animation: sky 10s linear infinite;
   overflow: hidden;
 }
 
-/* header */
-
-.header {
-  height: 100px;
-  border-bottom: 1px solid rgba(255, 217, 0, 0.377);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2rem;
-  position: relative;
-  z-index: 1;
-}
-
-/* 로고 */
-.header h1{
-  position: relative;
-}
-
-.header h1 a{
-  color: navy;
-}
-
-/* 메뉴 */
-.header .menu {
-  display: flex;
-}
-
-.header .menu li{
-  margin: 0 1rem;
-}
-
-.header .menu li a{
-  color: navy;
-}
-
-
-
-/* 로고 */
-.header .sns{
-  display: flex;
-}
-
-.header .sns li{}
-
-.header .sns li a{
-  margin: 0 0.5vw;
-  font-size: 18px;
-  color: #ddd;
-}
-
-.header .sns li a i{}
-
-.header .sub_menu {
+section {
+  width: 1000px;
+  height: 600px;
   position: absolute;
-}
-.header .sub_menu a{
-  color: navy;
-  
-}
-
-.header .sub_menu a i{
-  display: none;
-  position: absolute;
-}
-  /* display: none; */
-
-/* 메인 */
-
-main {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  /* background-color: #000; */
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  /* 가운데정렬 하기 */
 }
 
-main video {
+section .sky {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  opacity: 0.8;
+  position: relative;
 }
 
-main .text{
+section .sky .sun {
   position: absolute;
-  left: 6vw;
-  top: 40%;
+  width: 180px;
+  display: block;
+  left: 50%;
+  margin-left:-90px;
+  transform-origin: 50% 600px;
+  animation: sun 10s linear infinite;
 }
 
-main .text p{
-  font-size: 4vw;
-  font-family: fantasy;
-}
+/* 애니메이션 */
 
-main .text ul{
-  display: flex;
-}
 
-main .text ul li{
-  font-size: 18px;
-  margin-right: 10px
-}
+/* 문 혼자 해보기 */
 
-main .text ul li a{
-  color:navy;
-}
-
-main .text ul li a i{}
-
-main .text ul li a strong{}
-
-footer {
+section .sky .moon {
+  width: 160px;
   position: absolute;
-  bottom: 0px;
+  display: block;
+  left: 50%;
+  margin-left:-90px;
+  opacity: 0;
+  transform-origin: 50% 600px;
+  animation: moon 10s linear infinite;
+}
+
+/* 클라우드 혼자 하기 */
+
+section .sky .cloud_1 {
+  width: 160px;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  animation: cloud1 10s linear infinite;
+}
+section .sky .cloud_2 {
+  width: 90px;
+  position: absolute;
+  top: 150px;
+  left: 200;
+  animation: cloud2 10s linear infinite;
+}
+
+/* city */
+
+section .city {
+  position: absolute;
   width: 100%;
-  font: 14px/1 'arial';
-  color: #ddd;
-  text-align: center;
-  padding: 5vh 5vw;
 }
 
-@media screen and (max-width:700px) {
-  .header .menu li{
-    margin: 0 1rem;
-    display: none;
+section .city .city_img {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* @keyframes */
+
+@keyframes sky {
+  0% {
+    background-color: #cefeff;
+  }
+  25% {
+    background-color: skyblue;
+  }
+  50% {
+    background-color: darkblue ;
+  }
+  75% {
+    background-color: darkblue;
   }
 
-  main video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.8;
-    }
-    .header .sns li a i{
-    display: none;
-    }
-    
-    .header .sub_menu a i{
-      left: 90vw
-    }
+  100% {
+    background-color: #cefeff;
+  }
+  }
 
-    .header .sub_menu a i{
-      display: block;
-      color: navy;
+@keyframes sun {
+  0%{
+    transform:translateY(-100px) rotate(-90deg);
+  }
+  25%{
+    transform: translateY(-100px) rotate(0deg);
+  }
+  50%{
+    transform: translateY(-100px) rotate(90deg);
+    opacity: 0;
+  }
+  75%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+@keyframes moon {
+  0%{
+    opacity: 0;
+  }
+  25%{
+    opacity: 0;
+  }
+  50%{
+    transform:translateY(-100px) rotate(90deg);
+    opacity: 0;
+  }
+  75%{
+    transform:translateY(-100px) rotate(0deg);
+    opacity: 1;
+  }
+  100%{
+    transform:translateY(-100px) rotate(-90deg);
+    opacity: 0;
+  }
+}
+
+@keyframes cloud1 {
+  0%{
+    top: 0;
+    left: 0;
+    opacity: 0;
     }
-     
-    .header h1{
-      left: 50%;
-      transform: translateX(-50%);
+  
+    25%{
+    top: 0;
+    left: 0;
+    opacity: 0;
     }
+  
+    50%{
+      top: 0;
+      left: calc(100% - 160px);
+      opacity: 1;
+    }
+  
+    100%{
+    top: 0;
+    right: calc(100% - 160px);
+    opacity: 0;
+    }
+  }
+
+@keyframes cloud2 {
+  0%{
+    top: 0;
+    left: calc(100% - 160px);
+    opacity: 1;
+  }
+  25%{
+    opacity: 1;
+  }
+  50%{
+    opacity: 1;
+    top:0;
+    right: calc(100% - 160px);
+  }
+  75%{
+    top: 0;
+    left: 0;
+    opacity: 0;
+   
+  }
+  100%{
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
 }
