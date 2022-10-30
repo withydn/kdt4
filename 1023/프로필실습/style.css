@@ -1,0 +1,40 @@
+/* COMMON */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #555;
+}
+
+
+/* SECTION.WRAP */
+.wrap {
+/* 카드가운데 정렬 */
+}
+
+/* ARTICLE.PROFILE */
+.wrap .profile .btnView {
+  /* width, height 를 이용해 버튼 크기를 지정해주세요! */
+  display: block;
+}
+
+/* UL.CONTACT */
+.wrap .others a {
+ /* display 값을 변경해야 합니다 */
+}
+
+
+
+/* HINT: index.html 먼저 완성한 후, member_1.html, member_2.html에서 변경되는 css 속성(ex. 배경색 등)을 아래에 추가해주세요! */
+/* MEMBER_2 CUSTOM */
+
+/* MEMBER_3 CUSTOM */
